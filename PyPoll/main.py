@@ -40,8 +40,8 @@ for name in candidateVoteCount:
     candidateVote = candidateVoteCount[name]
     votePercent = "{:.3%}".format(float(candidateVote)/float(len(totalVotes)))
 
+    #Store each candidate's vote results into a list
     voteCount.append(candidateVoteCount[name])
-    
 
     f.write (f"{name}: {votePercent} ({candidateVote}) \n\n")
 
