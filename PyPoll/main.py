@@ -35,16 +35,18 @@ f.write ("----------------------------\n\n")
 f.write (f"Total Votes: {len(totalVotes)}\n\n")
 f.write ("----------------------------\n\n")
 
-#Display each candidate's name, the total number of votes for each candidate, calculate their vote percentage 
-#and find who has the highest number of vote.
+#Display each candidate's name, calculate their vote percentage and the total number of votes for each candidate
 for name in candidateVoteCount:
     candidateVote = candidateVoteCount[name]
     votePercent = "{:.3%}".format(float(candidateVote)/float(len(totalVotes)))
 
     voteCount.append(candidateVoteCount[name])
-    highestVoteIndex = voteCount.index(max(voteCount))
+    
 
     f.write (f"{name}: {votePercent} ({candidateVote}) \n\n")
+
+#Find the index of the highest number of votes
+highestVoteIndex = voteCount.index(max(voteCount))
 
 #Display the winner's name.
 f.write ("----------------------------\n\n")
